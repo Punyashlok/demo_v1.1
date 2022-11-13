@@ -1,0 +1,14 @@
+<h1>Urls#index</h1>
+
+<% @urls.each do |url| %>
+  <ul>
+    <li><b><%= url.name %></b> <%= link_to(url.short_url, url_show_path(url.short_url)) %> - <%= url.long_url %></li>
+    <li> Number of times visted: <%= url.click %> </li>
+    Incoming IP: <% url.ip_infos.each do |ip_info|%>
+    <li>
+      <%= ip_info.ip_address %>
+    </li>
+    <% end %>
+  </ul>
+<% end %>
+<%= link_to 'Create another link', new_url_path %>

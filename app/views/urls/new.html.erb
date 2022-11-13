@@ -1,0 +1,13 @@
+
+<h1>Urls#new</h1>
+ <h3><%= flash[:error] %></h3>
+
+<%= form_with model: @url do |form| %>
+  <p>Please input the name of the url: <%= form.text_field :name %></p>
+  <p>Please input url you want to shorten: <%= form.text_field :long_url %></p>
+  <%= form.submit %>
+<% end %>
+
+<div>
+  <%= link_to "View All created Urls", urls_path %>
+</div>
